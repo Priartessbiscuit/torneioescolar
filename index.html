@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Competição de Futsal</title>
+</head>
+<body>
+    <h1>Resultado da Competição de Futsal</h1>
+    <p>Digite o resultado de cada partida (G para ganhou, P para perdeu):</p>
+
+    <script>
+        let totalPontos = 0;
+        let partidasGanhas = 0;
+
+        for (let i = 1; i <= 6; i++) {
+            let resultado = prompt(`Partida ${i}: O time ganhou (G) ou perdeu (P)?`).toUpperCase();
+
+            if (resultado === "G") {
+                totalPontos += 3;
+                partidasGanhas++;
+            } else if (resultado === "P") {
+                totalPontos += 1;
+            } else {
+                alert("Entrada inválida! Digite G para ganhou ou P para perdeu.");
+                i--; // Repetir a iteração para a mesma partida
+            }
+        }
+
+        alert(`Total de pontos: ${totalPontos}\nPartidas ganhas: ${partidasGanhas}`);
+    </script>
+</body>
+</html>
